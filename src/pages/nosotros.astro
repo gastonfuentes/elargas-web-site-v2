@@ -1,4 +1,5 @@
 ---
+const pageTitle = "Sobre nosotros"
 ---
 
 <html lang="en">
@@ -7,14 +8,14 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>Elargas - {pageTitle}</title>
   </head>
   <body>
     <a href="/">Home</a>
     <a href="/nosotros/">Nosotros</a>
     <a href="/noticias/">Noticias</a>
     <section>
-      <h1>Nosotros</h1>
+      <h1>{pageTitle}</h1>
       <p>
         Es una empresa dedicada a ampliar la oferta del servicio de provisión de
         gas hidrocarburífero y de gases de origen renovable en la Provincia de

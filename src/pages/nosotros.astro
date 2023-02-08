@@ -1,5 +1,22 @@
 ---
-const pageTitle = "Sobre nosotros"
+const pageTitle = "Sobre nosotros";
+
+const identity = {
+  firstName: "gaston",
+  lastName: "fuentes",
+  country: "Argentina",
+  hobbies: ["leer", "bailar", "padel"],
+};
+
+const skills = ["html", "css", "js"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
 <html lang="en">
@@ -9,6 +26,18 @@ const pageTitle = "Sobre nosotros"
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Elargas - {pageTitle}</title>
+
+    <style define:vars={{skillColor, fontWeight, textCase}}>
+      h1{
+        color: blueviolet;
+        font-size: xx-large;
+      }
+      .skills{
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+      }
+    </style>
   </head>
   <body>
     <a href="/">Home</a>
@@ -30,6 +59,22 @@ const pageTitle = "Sobre nosotros"
         internas de los potenciales clientes que tengan frente a su propiedad el
         tendido de red de gas natural.
       </p>
+      <h2>mi datos</h2>
+      <ul>
+        <li>mi nombre es {identity.firstName} {identity.lastName}</li>
+        <li>mi pais es: {identity.country}</li>
+        {
+          identity.hobbies.length > 2 && (
+            <li> mi primer hobi es {identity.hobbies[0]} </li>
+          )
+        }
+      </ul>
+      <h3>mis skills son:</h3>
+      {skills.map((s) => <li class="skills">{s}</li>)}
+
+      {happy && <p>aguante river!!</p>}
+      {finished && <p>aguante Quintela</p>}
+      {goal === 3 ? <p>todo ok</p> : <p>todo mal</p>}
     </section>
   </body>
 </html>

@@ -1,8 +1,10 @@
 ---
 import "../styles/global.css";
-import Navigation from '../components/Navigation.astro'
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 
-const pageTitle = "Inicio"
+const pageTitle = "Inicio";
 ---
 
 <html lang="en">
@@ -14,7 +16,8 @@ const pageTitle = "Inicio"
     <title>Elargas - {pageTitle}</title>
   </head>
   <body>
-    <Navigation />
+    <Header />
     <h1>Elargas web site 2023 - {pageTitle}</h1>
+    <Footer />
   </body>
 </html>

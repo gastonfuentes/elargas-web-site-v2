@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Navigation from '../components/Navigation.astro'
 
 const pageTitle = "Inicio"
 ---
@@ -13,9 +14,7 @@ const pageTitle = "Inicio"
     <title>Elargas - {pageTitle}</title>
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/nosotros/">Nosotros</a>
-    <a href="/noticias/">Noticias</a>
+    <Navigation />
     <h1>Elargas web site 2023 - {pageTitle}</h1>
   </body>
 </html>

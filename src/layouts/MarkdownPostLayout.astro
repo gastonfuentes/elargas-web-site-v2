@@ -1,0 +1,16 @@
+---
+import Baseeelayout from "./Baseeelayout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Baseeelayout pageTitle = {frontmatter.title}>
+
+<!-- <h1>{frontmatter.title}</h1> -->
+<p>Escrito el: {frontmatter.pubDate.slice(0,10)}</p>
+<p><em>{frontmatter.description}</em></p>
+<p>escrito por {frontmatter.author}</p>
+<img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt}>
+<slot />
+
+</Baseeelayout>

@@ -1,14 +1,21 @@
 html {
-  background-color: #f1f5f9;
+  background-color: rgb(220, 220, 220);
   font-family: sans-serif;
 }
 
 body {
   margin: 0 auto;
   width: 100%;
-  max-width: 80ch;
-  padding: 1rem;
+  max-width: 90ch;
+  padding: 0;
   line-height: 1.5;
+
+ /*  display: flex;
+  flex-direction: column; */
+}
+
+img{
+  max-width: 100%;
 }
 
 * {
@@ -22,58 +29,89 @@ h1 {
 
 /* nav estiles */
 
-.hamburger{
-    padding-right: 20px;
-    cursor: pointer;
+.hamburger {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  cursor: pointer;
+  z-index: 1;
 }
 
-.hamburger .line{
-    display: block;
-    width: 40px;
-    height: 5px;
-    margin-bottom: 10px;
-    background-color: aqua;
+.hamburger .line {
+  display: block;
+  width: 20px;
+  height: 2px;
+  margin-bottom: 5px;
+  background-color: gray;
 }
 
 .nav-links {
-  width: 100%;
-  top: 5rem;
-  left: 48px;
-  background-color: coral;
-  display: none;
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  background-color: white;  
+  transition: transform 0.3s;
+  transform: translateY(-100%);    
 }
 
-.nav-links a {
-  display: block;
+.nav-links--show{
+  transform: translateY(0);
+}
+
+.nav-links #logo{
+  display: none;
+}
+
+.nav-links .enlaces{
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.nav-links a {  
   text-align: center;
   padding: 10px 0;
   text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
+  font-size: large;
+  color: gray;
 }
 
 .nav-links a:hover,
 a:focus {
-  background-color: chocolate;
+  /* background-color: chocolate; */
+  color: #E65644;
 }
 
-.expanded{
-    display: unset;
-}
 
-@media screen and (min-width: 636px) {
-    .nav-links{
-        margin-left: 5em;
-        display: block;
-        position: static;
-        width: auto;
-        background: none;
-    }
 
-    .nav-links a{
-        display: inline-block;
-        padding: 15px 20px;
-    }
+@media screen and (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav-links { 
+    
+    /* position: static; */
+    width: auto;    
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    transform: translateY(0);
+  }
+
+  .nav-links #logo{
+    display: flex;
+  }
+
+  .nav-links .enlaces{
+    flex-direction: row;
+  }
+
+  .nav-links a {    
+    padding: 15px 20px;
+    font-size: small;    
+  }
 }

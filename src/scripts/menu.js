@@ -1,3 +1,7 @@
-document.querySelector(".hamburger").addEventListener("click", () => {
-  document.querySelector(".nav-links").classList.toggle("expanded");
-});
+
+const menuCel = document.querySelector(".hamburger");
+const menuNormal = document.querySelector(".nav-links")
+
+menuCel.addEventListener('click', ()=>{
+  menuNormal.classList.toggle('nav-links--show')
+})

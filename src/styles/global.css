@@ -6,12 +6,9 @@ html {
 body {
   margin: 0 auto;
   width: 100%;
-  max-width: 90ch;
+  max-width: 100ch;
   padding: 0;
   line-height: 1.5;
-
- /*  display: flex;
-  flex-direction: column; */
 }
 
 img{
@@ -27,6 +24,20 @@ h1 {
   font-size: 2.5rem;
 }
 
+h2{
+  margin: 0;
+}
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
 /* nav estiles */
 
 .hamburger {
@@ -35,6 +46,7 @@ h1 {
   top: 1rem;
   cursor: pointer;
   z-index: 1;
+  
 }
 
 .hamburger .line {
@@ -46,19 +58,17 @@ h1 {
 }
 
 .nav-links {
-  display: flex;
-  flex-direction: column;
-  align-items: center;  
+  display: none;
   margin-top: 0;
   margin-bottom: 0;
-  padding-left: 0;
-  background-color: white;  
-  transition: transform 0.3s;
-  transform: translateY(-100%);    
+  padding-left: 0;  
+  background-color: white;
+  
 }
 
-.nav-links--show{
-  transform: translateY(0);
+.nav-links--show{ 
+  display: unset;
+  
 }
 
 .nav-links #logo{
@@ -69,6 +79,8 @@ h1 {
   display: flex;
   flex-direction: column;
   padding: 1em;
+  background-color: white;
+
 }
 
 .nav-links a {  
@@ -92,14 +104,13 @@ a:focus {
     display: none;
   }
 
-  .nav-links { 
-    
-    /* position: static; */
+  .nav-links {     
+    display: flex;
     width: auto;    
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    transform: translateY(0);
+    /* transform: translateY(0); */
   }
 
   .nav-links #logo{

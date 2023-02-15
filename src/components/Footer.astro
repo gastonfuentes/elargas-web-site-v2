@@ -7,18 +7,81 @@ const username = "withastro";
 
 <style>
   footer {
-    display: flex;
-    gap: 1rem;
+    display: grid;
+    grid-template-rows: auto auto;
     margin-top: 2rem;
+    background-color: white;
+    padding-top: 1rem;
+    gap: 1rem;
+  }
+  #footer-columns {
+    display: grid;
+    justify-items: center;
+    gap: 1rem;
+  }
+  #footer-columns img {
+    width: 200px;    
+  }
+  #footer-columns-img{
+    display: flex;
+    align-items: center;
+  }
+  #footer-columns ul, li, a{
+    color: gray;
+  }
+  #footer-columns h2{
+    font-size: medium;
+  }
+
+  #copy {
+    background-color: #EA1B36;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: small;
+  }
+
+  @media screen and (min-width: 768px) {
+    footer {
+    }
+    #footer-columns {
+      grid-template-columns: 2fr 1fr 1fr;
+    }   
+    #footer-columns ul, li, a{
+      font-size: small;
+    }
   }
 </style>
 
 <footer>
-  <p>
+  <div id="footer-columns">
+    <div id="footer-columns-img"><img src="/public/logo.svg" alt="logo elargas" /></div>
+    <div>
+      <h2>Contacto</h2>
+      <ul>
+        <li>23423879</li>
+        <li>info@dadads</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Mapa del sitio</h2>
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/nosotros">Nosotros</a></li>
+        <li><a href="/llama-encendida">Llama encendida</a></li>
+        <li><a href="/noticias">Noticias</a></li>
+        <li><a href="contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="copy">
+    <p>Copyright © 2023 ELaRGAS</p>
+  </div>
+  <!-- <p>
     Learn more about my projects on <a
       href={`https://www.${platform}.com/${username}`}>{platform}</a
     >!
   </p>
   <Social platform="facebook" username="gastonfuentes" />
-  <Social platform="instagram" username="gastonfuentes" />
+  <Social platform="instagram" username="gastonfuentes" /> -->
 </footer>

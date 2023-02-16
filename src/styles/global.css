@@ -1,5 +1,5 @@
 html {
-  background-color: rgb(220, 220, 220);
+  background-color:lightgray;
   font-family: sans-serif;
 }
 
@@ -24,7 +24,7 @@ h1 {
   font-size: 2.5rem;
 }
 
-h2{
+h2, h3, h4, h5{
   margin: 0;
 }
 

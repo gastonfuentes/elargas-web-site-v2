@@ -1,0 +1,50 @@
+---
+
+---
+
+<style>
+    #contenedor{
+        background-color: #FD2400;
+        display: grid;
+        padding: 2rem;
+        gap: 1rem;        
+    }
+    .bloque{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .bloque h3{
+        color: #F4A800;
+        font-size: xx-large;
+        font-weight: bold;
+    }
+    .bloque p{
+        color: white;
+        margin: 0;
+        text-align: center;
+    }
+
+    @media screen and (min-width: 768px){
+        #contenedor{
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+        }
+    }
+</style>
+
+<div id="contenedor">
+    <div class="bloque"><img src="/public/programa.svg" alt="">
+    </div>
+    <div class="bloque">
+        <h3>1000</h3>
+        <p>Beneficiarios de Llama Encendida</p>
+    </div>
+    <div class="bloque">
+        <h3>2</h3>
+        <p>Sucursales</p>
+    </div>
+    <div class="bloque">
+        <h3>+50</h3>
+        <p>Barrios</p>
+    </div>
+</div>

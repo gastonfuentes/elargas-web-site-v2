@@ -1,0 +1,35 @@
+---
+import CardPost from "./CardPost.astro";
+
+const allPosts = await Astro.glob("../pages/posts/*.md");
+---
+
+<style>
+  #contenedor {
+    display: grid;
+    gap: 2rem;
+    padding: 1rem;
+    background-color: white;
+  }
+  @media screen and (min-width: 768px) {
+    #contenedor {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+    }
+  }
+</style>
+
+<div id="contenedor">
+  {
+    allPosts
+      .slice(0, 3)
+      .map((p) => (
+        <CardPost
+          imagen={p.frontmatter.image.url}
+          titulo={p.frontmatter.title}
+          texto={p.frontmatter.description}
+          enlace={p.url}
+        />
+      ))
+  }
+</div>

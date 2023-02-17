@@ -1,0 +1,34 @@
+---
+const { imagen, titulo, texto, enlace } = Astro.props;
+---
+
+<style>
+  #contenedor {
+    background-color: #ffb02c;
+}
+
+
+#contenido {
+    padding: 1rem;
+    color: white;
+  }
+  #contenido p,
+  h4 {
+    margin: 0;
+  }
+  #contenido h4{
+    font-size: x-large;
+    text-transform: uppercase;
+  }
+</style>
+
+<div id="contenedor">
+  <img src={imagen} alt="" />
+  <div id="contenido">
+    <h4>{titulo}</h4>
+    <p>
+      {texto}
+    </p>
+    <button><a href={enlace}>ver mas</a></button>
+  </div>
+</div>

@@ -12,7 +12,9 @@
   .btn {
     padding: 3rem;
   }
-
+  .btn h1{
+    line-height: 1em;
+  }
   #botonUno {
     background-image: linear-gradient(
         rgba(200, 0, 0, 0.5),
@@ -20,14 +22,18 @@
       ),
       url(/programa-llama-encendida.jpg);
   }
-  #contentUno {
-    background-color: rgba(200, 0, 0, 0.5);
-    opacity: 0.2;
-    transition: 0.5s;
+
+  @media screen and (min-width: 768px) {
+    #contentUno {
+      background-color: rgba(200, 0, 0, 0.5);
+      opacity: 0.2;
+      transition: 0.5s;
+    }
+    #botonUno:hover #contentUno {
+      opacity: 1;
+    }
   }
-  #botonUno:hover #contentUno{
-    opacity: 1;
-  }
+
   #botonDos {
     background-image: linear-gradient(
         rgba(255, 176, 44, 0.7),
@@ -35,13 +41,15 @@
       ),
       url(/gasoducto.jpg);
   }
-  #contentDos {
-    background-color: rgba(255, 176, 44, 0.5);
-    opacity: 0.2;
-    transition: 0.5s;
-  }
-  #botonDos:hover #contentDos {
-    opacity: 1;
+  @media screen and (min-width: 768px) {
+    #contentDos {
+      background-color: rgba(255, 176, 44, 0.5);
+      opacity: 0.2;
+      transition: 0.5s;
+    }
+    #botonDos:hover #contentDos {
+      opacity: 1;
+    }
   }
 
   @media screen and (min-width: 768px) {

@@ -1,0 +1,69 @@
+---
+---
+
+<style>
+  #contenedor {
+    display: grid;
+  }
+  .boton {
+    text-align: center;
+    color: white;
+  }
+  .btn {
+    padding: 3rem;
+  }
+
+  #botonUno {
+    background-image: linear-gradient(
+        rgba(200, 0, 0, 0.5),
+        rgba(200, 0, 0, 0.5)
+      ),
+      url(/programa-llama-encendida.jpg);
+  }
+  #contentUno {
+    background-color: rgba(200, 0, 0, 0.5);
+    opacity: 0.2;
+    transition: 0.5s;
+  }
+  #botonUno:hover #contentUno{
+    opacity: 1;
+  }
+  #botonDos {
+    background-image: linear-gradient(
+        rgba(255, 176, 44, 0.7),
+        rgba(255, 176, 44, 0.7)
+      ),
+      url(/gasoducto.jpg);
+  }
+  #contentDos {
+    background-color: rgba(255, 176, 44, 0.5);
+    opacity: 0.2;
+    transition: 0.5s;
+  }
+  #botonDos:hover #contentDos {
+    opacity: 1;
+  }
+
+  @media screen and (min-width: 768px) {
+    #contenedor {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
+
+<div id="contenedor">
+  <a href="/noticias" class="boton" id="botonUno">
+    <div class="btn" id="contentUno">
+      <h1>Llama Encendida</h1>
+      <p>Beneficios y mas</p>
+      <h3>ver mas</h3>
+    </div>
+  </a>
+  <a href="/" class="boton" id="botonDos">
+    <div class="btn" id="contentDos">
+      <h1>Gasoducto</h1>
+      <p>Beneficios y mas</p>
+      <h3>ver mas</h3>
+    </div>
+  </a>
+</div>

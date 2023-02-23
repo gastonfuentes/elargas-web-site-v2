@@ -4,11 +4,13 @@ import LlamaSection from "../components/LlamaSection.astro";
 import LogosSection from "../components/LogosSection.astro";
 import NosotrosSection from "../components/NosotrosSection.astro";
 import PostsSection from "../components/PostsSection.astro";
+import Slider from "../components/reactComponents/Slider";
 import Baselayout from "../layouts/Baseeelayout.astro"
 const pageTitle = "Inicio"
 ---
 
 <Baselayout pageTitle = {pageTitle}>
+  <Slider client:load/>
   <NosotrosSection />
   <LlamaSection />
   <LogosSection />

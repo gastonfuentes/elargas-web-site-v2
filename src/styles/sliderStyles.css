@@ -1,14 +1,13 @@
 .slider {
   position: relative;
-  top: 3rem;
-  margin-bottom: 2rem;
+  display: none;
 }
 
 .botones {
   display: flex;
   justify-content: space-between;
   position: absolute;
-  top: 49%;
+  top: 40%;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -16,7 +15,23 @@
 
 @media screen and (min-width: 768px) {
   .slider {
-    top: 0;
-    margin-bottom: 0;
+    display: block;
   }
+}
+
+
+.btnSlider{    
+    opacity: .5;
+    border: none;
+    background: none;   
+    text-align: center;
+    color: #F4A938;
+    font-size: xx-large;
+    cursor: pointer;
+    transition: .3s;
+    margin: 1rem;
+}
+
+.btnSlider:hover{
+    opacity: 1;
 }

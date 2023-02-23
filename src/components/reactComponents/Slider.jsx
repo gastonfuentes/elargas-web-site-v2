@@ -51,8 +51,8 @@ export default function Slider() {
     <div className="slider">
       <img src={selectedImage} alt="imagen" />
       <div className="botones">
-        <button onClick={previous}>{"<"}</button>
-        <button onClick={next}>{">"}</button>
+        <button className="btnSlider" onClick={previous}>{"<"}</button>
+        <button className="btnSlider" onClick={next}>{">"}</button>
       </div>
     </div>
   );

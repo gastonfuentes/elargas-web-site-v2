@@ -1,8 +1,21 @@
 ---
+import ImagenBanner from "../components/ImagenBanner.astro";
+import TextoGasEtapaDos from "../components/textComponents/TextoGasEtapaDos.astro";
+import TextoGasEtapaUno from "../components/textComponents/TextoGasEtapaUno.astro";
+import TextoQueOfrecemos from "../components/textComponents/TextoQueOfrecemos.astro";
+import TextoQuienesSomos from "../components/textComponents/TextoQuienesSomos.astro";
+import TextoSection from "../components/TextoSection.astro";
 import Baseeelayout from "../layouts/Baseeelayout.astro";
-
-
 ---
-<Baseeelayout pageTitle="Gasoducto">
 
+<Baseeelayout pageTitle="Gasoducto">
+  <ImagenBanner img="/gasoducto1.jpg" desc="sobre nosotros" />
+
+  <TextoSection titulo="Gasoducto Productivo - Etapa 1" fondo='url("/fondito-para-banner.jpg")'>
+    <TextoGasEtapaUno />
+  </TextoSection>
+
+  <TextoSection titulo="Gasoducto Productivo - Etapa 2" fondo='url("/fondito-para-banner.jpg")'>
+    <TextoGasEtapaDos />
+  </TextoSection>
 </Baseeelayout>

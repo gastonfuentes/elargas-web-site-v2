@@ -6,12 +6,18 @@ const { titulo, fondo } = Astro.props;
 
 <style define:vars={{ fondo }}>
     section{
-        padding: 2rem 4rem;
+        padding: 1rem 2rem;
         background: var(--fondo);
         /* gap: 2rem; */
     }
     section h2{
         color: #FD2400;
+    }
+
+    @media screen and (min-width: 768px){
+        section{
+            padding: 2rem 4rem;
+        }
     }
 </style>
 

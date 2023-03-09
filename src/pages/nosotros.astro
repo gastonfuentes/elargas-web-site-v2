@@ -3,6 +3,7 @@ import ImagenBanner from "../components/ImagenBanner.astro";
 import TextoQueOfrecemos from "../components/textComponents/TextoQueOfrecemos.astro";
 import TextoQuienesSomos from "../components/textComponents/TextoQuienesSomos.astro";
 import TextoSection from "../components/TextoSection.astro";
+import TextoSectionIcono from "../components/TextoSectionIcono.astro";
 import Baseeelayout from "../layouts/Baseeelayout.astro";
 import "../styles/global.css";
 
@@ -26,7 +27,7 @@ const fontWeight = "bold";
 const textCase = "uppercase";
 ---
 
-<Baseeelayout pageTitle = "Nosotros">
+<Baseeelayout pageTitle="Nosotros">
   <style define:vars={{ skillColor, fontWeight, textCase }}>
     h1 {
       color: blueviolet;
@@ -39,9 +40,9 @@ const textCase = "uppercase";
     }
   </style>
 
-  <ImagenBanner img="/gasoducto1.jpg" desc="sobre nosotros"/>
+  <ImagenBanner img="/gasoducto1.jpg" desc="sobre nosotros" />
 
-  <TextoSection titulo="Quienes Somos?" fondo='url("/fondito-para-banner.jpg")'> 
+  <TextoSection titulo="Quienes Somos?" fondo='url("/fondito-para-banner.jpg")'>
     <TextoQuienesSomos />
   </TextoSection>
 
@@ -49,9 +50,36 @@ const textCase = "uppercase";
     <TextoQueOfrecemos />
   </TextoSection>
 
+  <TextoSectionIcono titulo="Mision" icono="/logo.svg">
+    <p>
+      Llevar a cuál localidad provincial podamos, gas natural hasta adentro de
+      las casas y ofrecer soluciones a empresas que aumenten su productividad.
+    </p>
+  </TextoSectionIcono>
 
+  <TextoSectionIcono titulo="Vision" icono="/logo.svg">
+    <p>
+      Desde ELaRGAS entendemos que el acceso al gas natural estuvo centralizado
+      en la Ciudad de La Rioja. La primera etapa de gasoducto productivo comenzó
+      el proceso de distribución del recurso hacia el interior, la segunda etapa
+      terminará de consolidar lo que será el gasoducto principal que alimentará
+      a la región. La planta compresora de Casa de Piedra proveerá la presión
+      que el sistema necesite. Con todas estas obras ya estarán sentadas las
+      bases para expandir con gasoductos y ramales hacia el resto de
+      localidades. Tenemos principal interés en llegar a las localidades que hoy
+      poseen gasoducto virtual debido a que ya existen redes de distribución
+      desaprovechadas en ellas. Estas localidades son Aimogasta, Chepes y Villa
+      Unión. Sobre las trazas para llegar a estas localidades se encuentran
+      otras en las que preveeremos que también sean beneficiadas con estas obras
+      de infraestructura. Entendemos la gasificación de las ciudades como
+      requisito necesario para alcanzar nuevos horizontes productivos,
+      economizar en medios de transporte y traer prosperidad a los usuarios
+      residenciales, en síntesis, entendemos que el gas natural es combustible
+      para el desarrollo de las ciudades.
+    </p>
+  </TextoSectionIcono>
 
-    <!-- <h3>mis skills son:</h3>
+  <!-- <h3>mis skills son:</h3>
     {skills.map((s) => <li class="skills">{s}</li>)}
 
     {happy && <p>aguante river!!</p>}

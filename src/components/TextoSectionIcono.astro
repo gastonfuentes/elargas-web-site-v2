@@ -1,0 +1,40 @@
+---
+const { titulo, icono } = Astro.props;
+---
+
+<style>
+  .borde {
+    width: 100%;
+    height: 1rem;
+    background-color: #FD2400;
+  }
+  .contenedor {
+    padding: 1rem 2rem;
+    display: grid;
+  }
+  .contenedor h2{
+    color: #FD2400;
+  }
+
+  @media screen and (min-width: 768px){
+    .contenedor{
+        grid-template-columns: auto auto;
+        align-items: center;
+        padding: 2rem 4rem;
+        gap: 1rem;
+    }
+  }
+</style>
+
+<section>
+  <div class="borde"></div>
+  <div class="contenedor">
+    <div>
+      <h2>{titulo}</h2>
+      <slot />
+    </div>
+    <div>
+      <img src={icono} alt="" />
+    </div>
+  </div>
+</section>

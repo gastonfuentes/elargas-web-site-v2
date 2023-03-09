@@ -1,9 +1,26 @@
 ---
+import ImagenBanner from "../components/ImagenBanner.astro";
+import LlamaSection from "../components/LlamaSection.astro";
+import LogosSection from "../components/LogosSection.astro";
+import TextoSection from "../components/TextoSection.astro";
 import Baseeelayout from "../layouts/Baseeelayout.astro";
-
 ---
 
 <Baseeelayout pageTitle="Llama Encendida">
-
-
+  <ImagenBanner img="/gasoducto1.jpg" desc="sobre nosotros" />
+  <TextoSection logo="/logo.svg" fondo='url("/fondito-para-banner.jpg")'>
+    <p>
+      El programa “llama encendida” tiene como finalidad poder brindar la
+      posibilidad a todos aquellos vecinos de conectarse a una red de gas
+      natural, incluyendo la mano de obra y financiando su instalación en cuotas
+      accesibles. Durante el año 2022 se llevaron a cabo más de 435
+      instalaciones domiciliarias de gas natural en la Capital de la Provincia
+      de La Rioja, sumando en total más de 480 instalaciones desde la salida del
+      Programa. Mientras tanto en Chamical se llevaron 6 instalaciones
+      domiciliarias, dado a que sus oficinas comenzaron a funcionar en finales
+      de noviembre del corriente año.
+    </p>
+  </TextoSection>
+  <LlamaSection />
+  <LogosSection />
 </Baseeelayout>

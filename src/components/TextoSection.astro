@@ -1,27 +1,27 @@
 ---
 import TextoQuienesSomos from "./textComponents/TextoQuienesSomos.astro";
 
-const { titulo, fondo } = Astro.props;
+const { titulo, fondo, logo } = Astro.props;
 ---
 
 <style define:vars={{ fondo }}>
-    section{
-        padding: 1rem 2rem;
-        background: var(--fondo);
-        /* gap: 2rem; */
-    }
-    section h2{
-        color: #FD2400;
-    }
+  section {
+    padding: 1rem 2rem;
+    background: var(--fondo);
+    /* gap: 2rem; */
+  }
+  section h2 {
+    color: #fd2400;
+  }
 
-    @media screen and (min-width: 768px){
-        section{
-            padding: 2rem 4rem;
-        }
+  @media screen and (min-width: 768px) {
+    section {
+      padding: 2rem 4rem;
     }
+  }
 </style>
 
 <section>
-  <h2>{titulo}</h2>
+  {logo ? <img src={logo} /> : <h2>{titulo}</h2>}
   <slot />
 </section>

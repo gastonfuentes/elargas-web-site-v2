@@ -1,0 +1,49 @@
+---
+---
+
+<style>
+  section {
+    padding: 2rem;
+    background-image: url("/fondito-para-banner.jpg");
+  }
+  section h2 {
+    color: #fd2400;
+    margin-bottom: 1rem;
+  }
+  .contenedor {
+    display: grid;
+  }
+
+  @media screen and (min-width: 768px) {
+    section h2{
+        margin-bottom: 0;
+    }
+    .contenedor {
+      grid-template-columns: auto auto;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  .contenedor ul {
+    list-style-type: disc !important;
+    padding-inline-start: 40px !important;
+  }
+</style>
+
+<section>
+  <h2>Requisitos</h2>
+  <div class="contenedor">
+    <div>
+      <ul>
+        <li>Fotocopia de DNI.</li>
+        <li>Boleta de la luz.</li>
+        <li>
+          Fotocopia de la documentación que acredite la posesión de la vivienda.
+        </li>
+        <li>Ser frentista a una red de gas.</li>
+      </ul>
+    </div>
+    <div><img src="/gassistas.png" alt="gasistas" /></div>
+  </div>
+</section>

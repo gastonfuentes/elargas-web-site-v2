@@ -1,17 +1,15 @@
 import React, { useState } from "react";
-import '../../styles/sliderStyles.css'
+import "../../styles/sliderStyles.css";
 
-export default function Slider() {
+export default function SliderTres() {
   const images = [
-    "/gasoducto1.jpg",
-    "/gasoducto2.jpg",
-    "/llamaEncendida1.jpg",
-    "/llamaEncendida2.jpg",
+    ["/gasoducto1.jpg", "/gasoducto2.jpg", "/llamaEncendida1.jpg"],
+    ["/llamaEncendida2.jpg", "/llamaEncendida1.jpg", "/gasoducto2.jpg"],
   ];
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [selectedImage, setSelectedImage] = useState(images[0]);
 
-  const selectNewImage = (index, images, next = true) => {
+  /*   const selectNewImage = (index, images, next = true) => {
     const condition = next
       ? selectedIndex < images.length - 1
       : selectedIndex > 0;
@@ -32,27 +30,37 @@ export default function Slider() {
 
   const next = () => {
     selectNewImage(selectedIndex, images);
-  };
-  /*  const previuos = () => {
+  }; */
+
+  const previous = () => {
     const condition = selectedIndex > 0;
     const nexIndex = condition ? selectedIndex - 1 : images.length - 1;
     setSelectedIndex(nexIndex);
     setSelectedImage(images[nexIndex]);
-  }; */
+  };
 
-  /*  const next = () => {
-    const condition = selectedIndex < images.length;
+  const next = () => {
+    const condition = selectedIndex < images.length - 1;
     const nexIndex = condition ? selectedIndex + 1 : 0;
     setSelectedIndex(nexIndex);
     setSelectedImage(images[nexIndex]);
-  }; */
+  };
 
   return (
-    <div className="slider">
-      <img src={selectedImage} alt="imagen" />
+    <div className="slider" id="sliderTres">
+      <h2>Galería de fotos</h2>
+      <div className="tresImag">
+        {selectedImage.map((i) => (
+          <img src={i} alt="imagen" />
+        ))}
+      </div>
       <div className="botones">
-        <button className="btnSlider" onClick={previous}>{"<"}</button>
-        <button className="btnSlider" onClick={next}>{">"}</button>
+        <button className="btnSlider" onClick={previous}>
+          {"<"}
+        </button>
+        <button className="btnSlider" onClick={next}>
+          {">"}
+        </button>
       </div>
     </div>
   );

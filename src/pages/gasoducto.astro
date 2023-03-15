@@ -1,5 +1,6 @@
 ---
 import ImagenBanner from "../components/ImagenBanner.astro";
+import LogosSection from "../components/LogosSection.astro";
 
 import SliderTres from "../components/reactComponents/SliderTres";
 import TextoGasEtapaDos from "../components/textComponents/TextoGasEtapaDos.astro";
@@ -26,4 +27,6 @@ import Baseeelayout from "../layouts/Baseeelayout.astro";
   >
     <TextoGasEtapaDos />
   </TextoSection>
+  <SliderTres client:load />
+  <LogosSection />
 </Baseeelayout>

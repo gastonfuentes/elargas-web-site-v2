@@ -9,28 +9,10 @@ export default function SliderTres() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [selectedImage, setSelectedImage] = useState(images[0]);
 
-  /*   const selectNewImage = (index, images, next = true) => {
-    const condition = next
-      ? selectedIndex < images.length - 1
-      : selectedIndex > 0;
-    const nextIndex = next
-      ? condition
-        ? selectedIndex + 1
-        : 0
-      : condition
-      ? selectedIndex - 1
-      : images.length - 1;
-    setSelectedIndex(nextIndex);
-    setSelectedImage(images[nextIndex]);
-  };
+  const [visualizador, setVisualizador] = useState(false);
+  const [selectedIndexVisualizador, setSelectedIndexVisualizador] = useState(0);
 
-  const previous = () => {
-    selectNewImage(selectedIndex, images, false);
-  };
-
-  const next = () => {
-    selectNewImage(selectedIndex, images);
-  }; */
+  /*   const visualizador = false; */
 
   const previous = () => {
     const condition = selectedIndex > 0;
@@ -46,22 +28,42 @@ export default function SliderTres() {
     setSelectedImage(images[nexIndex]);
   };
 
+  const closeImg = () => {
+    setVisualizador(false);
+  };
+  const openImg = (indice) => {
+    setSelectedIndexVisualizador(indice);
+    setVisualizador(true);
+    /* console.log(indice); */
+  };
+
   return (
-    <div className="slider" id="sliderTres">
-      <h2>Galería de fotos</h2>
-      <div className="tresImag">
-        {selectedImage.map((i) => (
-          <img src={i} alt="imagen" />
-        ))}
+    <>
+      <div className={visualizador ? "ful-img" : "ful-img-none"}>
+        <img src={selectedImage[selectedIndexVisualizador]} alt="imagen" />
+        <span onClick={closeImg}>X</span>
       </div>
-      <div className="botones">
-        <button className="btnSlider" onClick={previous}>
-          {"<"}
-        </button>
-        <button className="btnSlider" onClick={next}>
-          {">"}
-        </button>
+
+      <div className="slider" id="sliderTres">
+        <h2>Galería de fotos</h2>
+        <div className="contenedor-img">
+          <div className="boton-izq">
+            <button className="btnSlider" onClick={previous}>
+              {"<"}
+            </button>
+          </div>
+          <div className="tres-imagenes">
+            {selectedImage.map((i, index) => (
+              <img src={i} alt="imagen" onClick={() => openImg(index)} />
+            ))}
+          </div>
+          <div className="boton-der">
+            <button className="btnSlider" onClick={next}>
+              {">"}
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

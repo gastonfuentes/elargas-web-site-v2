@@ -10,10 +10,23 @@
   gap: 1rem;
 }
 
-.tresImag{
+.contenedor-img{
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.tres-imagenes{
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 1rem;
+}
+
+.tres-imagenes img{
+  cursor: pointer;
+  transition: 1s;
+}
+.tres-imagenes img:hover{
+  transform: scale(1.2);
 }
 
 .botones {
@@ -47,4 +60,33 @@
 
 .btnSlider:hover{
     opacity: 1;
+}
+
+/* VISUALIZADOR DE IMAGENES  */
+
+.ful-img{
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  z-index: 500;
+}
+
+.ful-img span{
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: xx-large;
+  color: white;
+  cursor: pointer;
+}
+
+.ful-img-none{
+  display: none;
 }

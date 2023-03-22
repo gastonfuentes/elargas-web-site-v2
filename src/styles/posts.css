@@ -1,0 +1,30 @@
+#super-contenedor {
+    display: grid;
+    gap: 2rem;
+    padding: 1rem;
+    background-color: white;
+  }
+  @media screen and (min-width: 768px) {
+    #super-contenedor {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+    }
+  }
+
+  
+#contenedor {
+  background-color: #ffb02c;
+}
+
+#contenido {
+  padding: 1rem;
+  color: white;
+}
+#contenido p,
+h4 {
+  margin: 0;
+}
+#contenido h4 {
+  font-size: x-large;
+  text-transform: uppercase;
+}

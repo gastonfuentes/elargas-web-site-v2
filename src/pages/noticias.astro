@@ -1,19 +1,18 @@
 ---
 import BlogPosts from "../components/BlogPosts.astro";
+import PostsReact from "../components/reactComponents/PostsReact";
 import Baseeelayout from "../layouts/Baseeelayout.astro";
 
 /* obtenemos todos los posts en un array */
-const allPosts = await Astro.glob('../pages/posts/*.md')
+const allPosts = await Astro.glob("../pages/posts/*.md");
 
-/* console.log(allPosts[0].frontmatter) */
+var numPosts = 3;
+
+const cargarPosts = () => {
+  numPosts = allPosts.length - 1;
+};
 ---
 
-
-<Baseeelayout pageTitle = "Noticias">
-  <ul>
-    {allPosts.map((post)=>(
-      /* <li><a href={post.url}>{post.frontmatter.title}</a></li> */
-      <BlogPosts url = {post.url} title = {post.frontmatter.title} />
-    ))}
-  </ul>
+<Baseeelayout pageTitle="Noticias">   
+  <PostsReact client:load posts={allPosts} boton = "true"/>
 </Baseeelayout>

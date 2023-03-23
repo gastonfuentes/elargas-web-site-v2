@@ -1,22 +1,71 @@
 ---
-
 ---
 
-<div>
-    <div>
+<style>
+  #contenedor-banners-inst {
+    display: grid;
+    gap: 1rem;
+  }
+  #banner-sedes {
+    background-image: linear-gradient(rgba(200, 0, 0, 0.5), rgba(200, 0, 0, 0)),
+      url(/sucursales.jpg);
+
+    padding: 4rem 2rem;
+    background-size: cover;
+    color: white;
+  }
+  #contenedor-sedes {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-around;
+    align-items: center;
+  }
+  #contenedor-sedes h3 {
+    text-decoration: underline;
+  }
+  #contenedor-sedes span {
+    font-size: small;
+    margin-left: 1rem;
+    text-decoration: none;
+  }
+
+  #banner-trabaja {
+    background-image: linear-gradient(
+        rgba(255, 176, 44, 0.7),
+        rgba(255, 176, 44, 0)
+      ),
+      url(/llamaEncendida3.jpg);
+
+    padding: 2rem;
+    background-size: cover;
+    display: grid;
+    justify-items: end;
+  }
+  #contenedor-trabaja {
+    display: grid;
+    width: 50%;
+    justify-items: end;
+  }
+</style>
+
+<div id="contenedor-banners-inst">
+  <div id="banner-sedes">
+    <div id="contenedor-sedes">
+      <h1>Sedes</h1>
       <div>
-        <h1>Sedes</h1>
-        <h5>La Rioja - Capital <span>Buenos Aires 337</span></h5>
-        <h5>Depto. Chamical <span>Juan Domingo Peron 130</span></h5>        
-      </div>      
+        <h3>La Rioja - Capital</h3><span>Buenos Aires 337</span>
+      </div>
+      <div>
+        <h3>Depto. Chamical</h3><span>Juan Domingo Peron 130</span>
+      </div>
     </div>
-
-    <div>
-        <div>
-            <h2>Trabaja con nosotros</h2>
-            <p>Si sos profesional, gasista matriculado y estas buscando trabajo</p>
-            <button>Contactanos</button>
-        </div>
-    </div>
-
   </div>
+
+  <div id="banner-trabaja">
+    <div id="contenedor-trabaja">
+      <h1>Trabaja con nosotros</h1>
+      <p>Si sos profesional, gasista matriculado y estas buscando trabajo</p>
+      <button>Contactanos</button>
+    </div>
+  </div>
+</div>

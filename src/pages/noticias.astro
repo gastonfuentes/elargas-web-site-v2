@@ -1,18 +1,15 @@
 ---
-import BlogPosts from "../components/BlogPosts.astro";
+import BannersInstitucional from "../components/BannersInstitucional.astro";
+import LogosSection from "../components/LogosSection.astro";
 import PostsReact from "../components/reactComponents/PostsReact";
 import Baseeelayout from "../layouts/Baseeelayout.astro";
 
 /* obtenemos todos los posts en un array */
 const allPosts = await Astro.glob("../pages/posts/*.md");
-
-var numPosts = 3;
-
-const cargarPosts = () => {
-  numPosts = allPosts.length - 1;
-};
 ---
 
 <Baseeelayout pageTitle="Noticias">   
   <PostsReact client:load posts={allPosts} boton = "true"/>
+  <BannersInstitucional />
+  <LogosSection />
 </Baseeelayout>

@@ -11,14 +11,23 @@ const { imagen, titulo, texto, enlace } = Astro.props;
 #contenido {
     padding: 1rem;
     color: white;
+    display: grid;
+    gap: 1rem;
   }
   #contenido p,
   h4 {
     margin: 0;
+    line-height: initial;
   }
   #contenido h4{
-    font-size: x-large;
+    font-size: large;
     text-transform: uppercase;
+  }
+  #contenido a{
+    font-weight: bold;
+    color: #FD2400;
+    font-size: small;
+    /* margin-top: 2rem; */
   }
 </style>
 
@@ -26,9 +35,10 @@ const { imagen, titulo, texto, enlace } = Astro.props;
   <img src={imagen} alt="" />
   <div id="contenido">
     <h4>{titulo}</h4>
-    <p>
+    <!-- <p>
       {texto}
-    </p>
-    <button><a href={enlace}>ver mas</a></button>
+    </p> -->
+    <!-- <button><a href={enlace}>ver mas</a></button> -->
+    <a href={enlace}>Leer más</a>
   </div>
 </div>

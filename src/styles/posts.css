@@ -23,8 +23,15 @@
 #contenido p,
 h4 {
   margin: 0;
+  line-height: initial;
 }
 #contenido h4 {
-  font-size: x-large;
+  font-size: large;
   text-transform: uppercase;
+}
+#contenido a{
+  font-weight: bold;
+  color: #FD2400;
+  font-size: small;
+  /* margin-top: 2rem; */
 }

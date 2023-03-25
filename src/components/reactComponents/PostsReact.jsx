@@ -5,7 +5,7 @@ import "../../styles/posts.css";
 export default function PostsReact(props) {
   const { posts, boton } = props;
 
-  const [numero, setNumero] = useState(3);
+  const [numero, setNumero] = useState(6);
   const [menos, setMenos] = useState(false);
 
   console.log(numero);
@@ -16,7 +16,7 @@ export default function PostsReact(props) {
   };
 
   const less = () => {
-    setNumero(3);
+    setNumero(6);
     setMenos(false);
   };
 

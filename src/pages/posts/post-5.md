@@ -1,11 +1,11 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: 'My quinto Blog Post'
+title: 'My quinto Blog Post dadadad dada dadad'
 pubDate: 2023-02-01
 description: 'This is the first post of my new Astro blog.'
 author: 'Astro Learner'
 image:
-    url: '/gasoducto1.jpg' 
+    url: "/posts/post2.jpg"
     alt: 'The Astro logo with the word One.'
 tags: ["astro", "blogging", "learning in public"]
 ---

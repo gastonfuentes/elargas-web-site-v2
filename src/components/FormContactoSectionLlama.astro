@@ -1,0 +1,23 @@
+---
+import FormContactoLlama from "./reactComponents/FormContactoLlama";
+---
+
+<style>
+    #contenedor-form-llama{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+</style>
+
+<div id="contenedor-form-llama">
+  <div>
+    <h1>Contactenos</h1>
+    <p>
+      Si te interesa saber más sobre nuestro programa “Llama Encendida” podés
+      rellenar el formulario y nosotromos nos comunicaremos a la brevedad.
+    </p>
+  </div>
+  <div>
+    <FormContactoLlama client:load/>
+  </div>
+</div>

@@ -10,6 +10,8 @@ export default function FormContactoLlama() {
   const [correo, cambiarCorreo] = useState({ campo: "", valido: null });
   const [barrio, cambiarBarrio] = useState({ campo: "", valido: null });
   const [telefono, cambiarTelefono] = useState({ campo: "", valido: null });
+  const [terminos, cambiarTerminos] = useState(false);
+  const [formularioValido, cambiarFormularioValido] = useState(null);
 
   const expresiones = {
     barrio: /^[a-zA-Z0-9_-\s]{4,40}$/, // Letras, números, guion y guion_bajo
@@ -22,25 +24,51 @@ export default function FormContactoLlama() {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_jp1nvsn",
-        "template_jsvhbkl",
-        form.current,
-        "jBfnrVi1kbYu5YwLQ"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    if (
+      nombre.valido === "true" &&
+      correo.valido === "true" &&
+      barrio.valido === "true" &&
+      telefono.valido === "true" &&
+      terminos
+    ) {
+      cambiarFormularioValido(true);
+      cambiarNombre({campo: "", valido: null})
+      cambiarCorreo({campo: "", valido: null})
+      cambiarBarrio({campo: "", valido: null})
+      cambiarTelefono({campo: "", valido: null})
+      cambiarTerminos(false)
+
+
+      emailjs
+        .sendForm(
+          "service_jp1nvsn",
+          "template_jsvhbkl",
+          form.current,
+          "jBfnrVi1kbYu5YwLQ"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+
+
+    }else{
+      cambiarFormularioValido(false)
+    }
+
+
+  };
+
+  const onChangeTerminos = (e) => {
+    cambiarTerminos(e.target.checked);
   };
 
   return (
-    <form ref={form} onSubmit={sendEmail}>
+    <form ref={form} onSubmit={sendEmail} >
       <InputReact
         objeto={nombre}
         estado={nombre.campo}
@@ -94,7 +122,7 @@ export default function FormContactoLlama() {
         objeto={telefono}
         estado={telefono.campo}
         cambiarEstado={cambiarTelefono}
-        tipo="number"
+        tipo="text"
         label="Telefono"
         placeholder="Ej: 3804667788"
         htmlFor="contact_number"
@@ -110,12 +138,18 @@ export default function FormContactoLlama() {
 
       <div className="check-terminos">
         <label>
-          <input type="checkbox" name="terminos" id="terminos" />
+          <input
+            type="checkbox"
+            name="terminos"
+            id="terminos"
+            checked={terminos}
+            onChange={onChangeTerminos}
+          />
           Acepto los términos y condiciones
         </label>
       </div>
 
-      {false && (
+      {formularioValido === false && (
         <div className="mensaje-error">
           <p>
             <b>Error: </b> Por favor rellene correctamente el formulario.
@@ -125,7 +159,7 @@ export default function FormContactoLlama() {
 
       <div className="boton-form">
         <input type="submit" id="button" value="Enviar" />
-        <p>Formulario enviado correctamente</p>
+        {formularioValido === true && <p>Formulario enviado correctamente</p>}
       </div>
     </form>
   );

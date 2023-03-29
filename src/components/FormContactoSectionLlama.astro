@@ -3,21 +3,49 @@ import FormContactoLlama from "./reactComponents/FormContactoLlama";
 ---
 
 <style>
-    #contenedor-form-llama{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+  #contenedor-form-llama {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    padding: 1rem;
+    background-image: linear-gradient(
+        rgba(255, 38, 38, 0.823),
+        rgba(200, 0, 0, 0)
+      ),
+      url(/llamaEncendida1.jpg);
     }
+    @media screen and (min-width: 768px) {
+      #contenedor-form-llama {
+        grid-template-columns: 1fr 1fr;
+        padding: 1rem 2rem;
+        gap: 1rem;
+    }
+  }
+  #form-llama-izq {
+    padding: 2rem;
+    color: antiquewhite;
+  }
+  #form-llama-izq h1 {
+    margin: 0;
+  }
+  #form-llama-izq p {
+    font-size: x-large;
+  }
+  #form-llama-der {
+    padding: 1rem;
+    width: 90%;
+  }
 </style>
 
 <div id="contenedor-form-llama">
-  <div>
+  <div id="form-llama-izq">
     <h1>Contactenos</h1>
     <p>
       Si te interesa saber más sobre nuestro programa “Llama Encendida” podés
       rellenar el formulario y nosotromos nos comunicaremos a la brevedad.
     </p>
   </div>
-  <div>
-    <FormContactoLlama client:load/>
+  <div id="form-llama-der">
+    <FormContactoLlama client:load />
   </div>
 </div>

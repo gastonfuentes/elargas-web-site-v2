@@ -10,7 +10,7 @@ export default function FormContactoLlama() {
   const [correo, cambiarCorreo] = useState({ campo: "", valido: null });
   const [barrio, cambiarBarrio] = useState({ campo: "", valido: null });
   const [telefono, cambiarTelefono] = useState({ campo: "", valido: null });
-  const [terminos, cambiarTerminos] = useState(false);
+  /* const [terminos, cambiarTerminos] = useState(false); */
   const [formularioValido, cambiarFormularioValido] = useState(null);
 
   const expresiones = {
@@ -28,15 +28,15 @@ export default function FormContactoLlama() {
       nombre.valido === "true" &&
       correo.valido === "true" &&
       barrio.valido === "true" &&
-      telefono.valido === "true" &&
-      terminos
+      telefono.valido === "true" /* &&
+      terminos */
     ) {
       cambiarFormularioValido(true);
       cambiarNombre({campo: "", valido: null})
       cambiarCorreo({campo: "", valido: null})
       cambiarBarrio({campo: "", valido: null})
       cambiarTelefono({campo: "", valido: null})
-      cambiarTerminos(false)
+      /* cambiarTerminos(false) */
 
 
       emailjs
@@ -136,7 +136,7 @@ export default function FormContactoLlama() {
         <input type="text" name="contact_number" id="contact_number" />
       </div> */}
 
-      <div className="check-terminos">
+      {/* <div className="check-terminos">
         <label>
           <input
             type="checkbox"
@@ -147,7 +147,7 @@ export default function FormContactoLlama() {
           />
           Acepto los términos y condiciones
         </label>
-      </div>
+      </div> */}
 
       {formularioValido === false && (
         <div className="mensaje-error">

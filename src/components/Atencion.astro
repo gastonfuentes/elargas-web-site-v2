@@ -2,38 +2,52 @@
 ---
 
 <style>
-    #contenedor-atencion{
-        background-image: url(/atencion.jpg);
-        padding: 2rem;
-        display: grid;
-        gap: 1rem;
-        justify-items: center;
-        color: white;
-        text-align: center;
-    }
-    #contenedor-atencion h1{
-        color: white;
-        width: 50%;
-        line-height: initial;
-        text-align: center;
-    }
-    #atencion-horarios{
-        background-color: #F4A800;
-        padding: 1rem 3rem;
-        border-radius: 1rem;
-    }
-    #atencion-horarios h4{
-        font-size: xx-large;
-    }
+  #contenedor-atencion {
+    background-image: url(/atencion.jpg);
+    padding: 2rem;
+    display: grid;
+    gap: 1rem;
+    justify-items: center;
+    color: white;
+    text-align: center;
+  }
+  #contenedor-atencion h1 {
+    color: white;
+    /* width: 50%; */
+    line-height: initial;
+    text-align: center;
+    font-size: xxx-large;
+    text-shadow: 0px 2px 2px black;
+  }
+  #atencion-horarios {
+    background-color: #f4a7009c;
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+    box-shadow: 0px 2px 2px black;
+  }
+  #atencion-horarios h4 {
+    font-size: xx-large;
+  }
+  #atencion-horarios span {
+    font-size: x-large;
+  }
+
+  #atencion-contacto p {
+    margin: 0.5rem;
+    text-shadow: 2px 2px 4px black;
+  }
+  #atencion-contacto p img {
+    margin-right: 0.5rem;
+  }
 </style>
 <div id="contenedor-atencion">
   <h1>HORARIO DE ATENCION</h1>
   <div id="atencion-horarios">
     <h4>Lunes a Viernes</h4>
-    <span> 8:00 a 21:00 hs</span>
+    <span> 9:00 a 21:00 hs</span>
   </div>
   <div id="atencion-contacto">
-    <p>380-4113744</p>
-    <p>info@elargas.com.ar</p>
+    <p><img src="/tel.png" alt="icono-tel" />380-4113744</p>
+    <p><img src="/correo.png" alt="icono-correo" />info@elargas.com.ar</p>
   </div>
 </div>

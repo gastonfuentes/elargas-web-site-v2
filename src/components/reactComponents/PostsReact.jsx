@@ -34,9 +34,9 @@ export default function PostsReact(props) {
       </div>
       {boton === "true" ? (
         menos ? (
-          <button onClick={less}>ver menos noticias </button>
+          <button onClick={less} className="btn-posts">ver menos noticias </button>
         ) : (
-          <button onClick={more}>ver mas noticias </button>
+          <button onClick={more} className="btn-posts">ver mas noticias </button>
         )
       ) : (
         ""

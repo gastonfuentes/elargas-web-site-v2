@@ -7,26 +7,37 @@
     gap: 1rem;
   }
   #banner-sedes {
-    background-image: linear-gradient(rgba(200, 0, 0, 0.5), rgba(200, 0, 0, 0)),
+    background-image: linear-gradient(
+        rgba(200, 0, 0, 0.743),
+        rgba(200, 0, 0, 0.303)
+      ),
       url(/sucursales.jpg);
-
     padding: 4rem 2rem;
     background-size: cover;
     color: white;
   }
   #contenedor-sedes {
     display: grid;
-    grid-template-columns: auto auto auto;
     justify-content: space-around;
     align-items: center;
+    gap: 1rem;
+  }
+  @media screen and (min-width: 768px) {
+    #contenedor-sedes {
+      grid-template-columns: auto auto auto;
+    }
+  }
+  #contenedor-sedes h1 {
+    font-size: xxx-large;
   }
   #contenedor-sedes h3 {
     text-decoration: underline;
+    font-size: x-large;
   }
-  #contenedor-sedes span {
-    font-size: small;
-    margin-left: 1rem;
+  #contenedor-sedes p {
+    font-size: medium;
     text-decoration: none;
+    margin: 0;
   }
 
   #banner-trabaja {
@@ -53,10 +64,12 @@
     <div id="contenedor-sedes">
       <h1>Sedes</h1>
       <div>
-        <h3>La Rioja - Capital</h3><span>Buenos Aires 337</span>
+        <h3>La Rioja - Capital</h3>
+        <p>Buenos Aires 337</p>
       </div>
       <div>
-        <h3>Depto. Chamical</h3><span>Juan Domingo Peron 130</span>
+        <h3>Depto. Chamical</h3>
+        <p>Juan Domingo Peron 130</p>
       </div>
     </div>
   </div>

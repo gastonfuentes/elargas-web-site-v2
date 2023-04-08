@@ -29,6 +29,7 @@
   }
   #contenedor-sedes h1 {
     font-size: xxx-large;
+    text-shadow: 0px 2px 2px black;
   }
   #contenedor-sedes h3 {
     text-decoration: underline;
@@ -42,8 +43,8 @@
 
   #banner-trabaja {
     background-image: linear-gradient(
-        rgba(255, 176, 44, 0.7),
-        rgba(255, 176, 44, 0)
+        rgba(255, 178, 44, 0.825),
+        rgba(255, 178, 44, 0.305)
       ),
       url(/llamaEncendida3.jpg);
 
@@ -54,8 +55,39 @@
   }
   #contenedor-trabaja {
     display: grid;
+  }
+  @media screen and (min-width: 768px) {
+    #contenedor-trabaja {
+      width: 50%;  
+      justify-items: center;    
+    }
+  }
+  #contenedor-trabaja h1 {
+    color: white;
+    font-size: xxx-large;
+    text-align: center;
+    line-height: initial;
+    margin: 0;
+    text-shadow: 0px 2px 2px black;
+  }
+  #contenedor-trabaja p {
+    font-size: medium;
+    font-weight: bold;
+    text-align: center;
+  }
+  .btn {
+    background-color: red;
+    border: none;
+    padding: 1rem;
+    color: white;
+    cursor: pointer;
+    transition: all 1s;
+    margin: 1rem;
+    text-align: center;
     width: 50%;
-    justify-items: end;
+  }
+  .btn:hover {
+    background-color: rgb(206, 0, 0);
   }
 </style>
 
@@ -76,9 +108,9 @@
 
   <div id="banner-trabaja">
     <div id="contenedor-trabaja">
-      <h1>Trabaja con nosotros</h1>
-      <p>Si sos profesional, gasista matriculado y estas buscando trabajo</p>
-      <button>Contactanos</button>
+      <h1>Trabajá con nosotros</h1>
+      <p>Si sos profesional, gasista matriculado y estas buscando trabajo</p>      
+      <a href="/contacto" class="btn">Contactanos</a>
     </div>
   </div>
 </div>

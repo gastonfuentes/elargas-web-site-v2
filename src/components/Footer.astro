@@ -55,6 +55,19 @@ const username = "withastro";
       font-size: small;
     }
   }
+  .contacto-icono {
+    display: grid;
+    grid-template-columns: 1rem 1fr;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.2rem;
+  }
+  .contacto-icono img {
+    width: 10px;
+  }
+  .contacto-icono p {
+    margin: 0;
+  }
 </style>
 
 <footer>
@@ -62,11 +75,39 @@ const username = "withastro";
     <div id="footer-columns-img">
       <img src="/logo.svg" alt="logo elargas" />
     </div>
-    <div>
+    <div id="footer-contacto">
       <h2>Contacto</h2>
       <ul>
-        <li>23423879</li>
-        <li>info@dadads</li>
+        <li>
+          <div class="contacto-icono">
+            <img src="/i.png" alt="icono-tel" />
+            <p>23423879</p>
+          </div>
+        </li>
+        <li>
+          <div class="contacto-icono">
+            <img src="/carta.png" alt="icono-carta" />
+            <a href="mailto:info@elargas.com.ar">info@elargas.com.ar</a>
+          </div>
+        </li>
+        <li>
+          <div class="contacto-icono">
+            <img src="/face.png" alt="icono-facebook" />
+            <a href="https://www.facebook.com/ELaRGAS/" target="_blank">Elargas</a>
+          </div>
+        </li>
+        <li>
+          <div class="contacto-icono">
+            <img src="/insta.png" alt="icono-instagram" />
+            <a href="https://www.instagram.com/elargas.lr/" target="_blank">Elargas.lr</a>
+          </div>
+        </li>
+        <li>
+          <div class="contacto-icono">
+            <img src="/linkind.png" alt="icono-linkedin" />
+            <a href="https://www.linkedin.com/company/elargas-s-a-p-e-m/" target="_blank">Elargas S.A.P.E.M</a>
+          </div>
+        </li>
       </ul>
     </div>
     <div>

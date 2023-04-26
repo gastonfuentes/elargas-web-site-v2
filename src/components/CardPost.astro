@@ -32,13 +32,13 @@ const { imagen, titulo, texto, enlace } = Astro.props;
 </style>
 
 <div id="contenedor">
-  <img src={imagen} alt="" />
+  <img src={imagen.fields.file.url} alt="" />
   <div id="contenido">
     <h4>{titulo}</h4>
     <!-- <p>
       {texto}
     </p> -->
     <!-- <button><a href={enlace}>ver mas</a></button> -->
-    <a href={enlace}>Leer más</a>
+    <a href={"/posts/" + enlace}>Leer más</a>
   </div>
 </div>

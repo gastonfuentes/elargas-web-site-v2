@@ -8,7 +8,7 @@ export default function PostsReact(props) {
   const [numero, setNumero] = useState(6);
   const [menos, setMenos] = useState(false);
 
-  console.log(numero);
+  /* console.log(numero); */
 
   const more = () => {
     setNumero(posts.length);
@@ -23,12 +23,13 @@ export default function PostsReact(props) {
   return (
     <>
       <div id="super-contenedor">
-        {posts.slice(0, numero).map((p) => (
+        {posts.items.slice(0, numero).map((p) => (
           <CardPostReact
-            imagen={p.frontmatter.image.url}
-            titulo={p.frontmatter.title}
-            texto={p.frontmatter.description}
-            enlace={p.url}
+            key={p.sys.id}
+            imagen={p.fields.imagen.fields.file.url}
+            titulo={p.fields.titulo}
+            /* texto={p.frontmatter.description} */
+            enlace={p.fields.slug}
           />
         ))}
       </div>

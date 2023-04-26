@@ -1,0 +1,43 @@
+---
+import Baseeelayout from "../../layouts/Baseeelayout.astro";
+import { contentfulClient } from "../../lib/contentful";
+/* import type { BlogPost } from "../../lib/contentful"; */
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+
+let post;
+const { slug } = Astro.params;
+
+try {
+  const data = await contentfulClient.getEntries({
+    content_type: "blogPost",
+    "fields.slug": slug,
+  });
+  const { titulo, resumen, contenido, imagen } = data.items[0].fields;
+  post = {
+    titulo,
+    resumen,
+    contenido: documentToHtmlString(contenido),
+    imagen,
+  };
+} catch (error) {
+  return Astro.redirect("/404");
+}
+---
+
+<style>
+  h2 {
+    color: #fd2400;
+  }
+</style>
+
+<Baseeelayout pageTitle={post.titulo}>
+  <h2>{post.titulo}</h2>
+  <!-- <p>Escrito el: {frontmatter.pubDate.slice(0,10)}</p> -->
+  <p><em>{post.resumen}</em></p>
+  <!-- <p>escrito por {frontmatter.author}</p> -->
+  <img src={post.imagen.fields.file.url} alt={post.imagen.alt}>
+  <!-- <img src={frontmatter.image.url} alt={frontmatter.image.alt}> -->
+
+  <!--   <slot /> -->
+  <article set:html={post?.contenido} />
+</Baseeelayout>

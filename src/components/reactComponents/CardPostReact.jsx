@@ -2,7 +2,7 @@ import React from "react";
 import "../../styles/posts.css";
 
 export default function CardPostReact(props) {
-  const { imagen, titulo, texto, enlace } = props;
+  const { imagen, titulo, texto, enlace, id } = props;
   return (
     <div id="contenedor">
       <img src={imagen} alt="" />
@@ -10,7 +10,7 @@ export default function CardPostReact(props) {
         <h4>{titulo}</h4>
         {/* <p>{texto}</p> */}
 
-        <a href={enlace}>Leer más</a>
+        <a href={"/posts/" + enlace}>Leer más</a>
       </div>
     </div>
   );

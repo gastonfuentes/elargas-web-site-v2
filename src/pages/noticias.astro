@@ -5,11 +5,29 @@ import PostsReact from "../components/reactComponents/PostsReact";
 import Baseeelayout from "../layouts/Baseeelayout.astro";
 
 /* obtenemos todos los posts en un array */
-const allPosts = await Astro.glob("../pages/posts/*.md");
+/* const allPosts = await Astro.glob("../pages/posts/*.md"); */
+
+/* obtenemos posts desde contentful */
+import { contentfulClient } from "../lib/contentful";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import type { Document } from "@contentful/rich-text-types";
+
+/* interface BlogPost {
+  title: string;
+  content: Document;
+} */
+
+const postsContentFul = await contentfulClient.getEntries({
+  content_type: "blogPost",
+});
+
+/* console.log(postsContentFul.items[0].fields.imagen.fields.file.url); */
+
+
 ---
 
-<Baseeelayout pageTitle="Noticias">   
-  <PostsReact client:load posts={allPosts} boton = "true"/>
+<Baseeelayout pageTitle="Noticias">
+  <PostsReact client:load posts={postsContentFul} boton="true" />
   <BannersInstitucional />
   <LogosSection />
 </Baseeelayout>

@@ -1,8 +1,15 @@
 ---
 import CardPost from "./CardPost.astro";
 
-const allPosts = await Astro.glob("../pages/posts/*.md");
+/* const allPosts = await Astro.glob("../pages/posts/*.md"); */
 const{numero} = Astro.props;
+
+/* obtenemos contenido desde contentful */
+import { contentfulClient } from "../lib/contentful";
+
+const allPosts = await contentfulClient.getEntries({
+  content_type: "blogPost",
+});
 ---
 
 <style>
@@ -22,14 +29,14 @@ const{numero} = Astro.props;
 
 <div id="contenedor">
   {
-    allPosts
+    allPosts.items
       .slice(0, numero)
       .map((p) => (
         <CardPost
-          imagen={p.frontmatter.image.url}
-          titulo={p.frontmatter.title}
-          texto={p.frontmatter.description}
-          enlace={p.url}
+          imagen={p.fields.imagen}
+          titulo={p.fields.titulo}
+          texto={p.fields.resumen}
+          enlace={p.fields.slug}
         />
       ))
   }
